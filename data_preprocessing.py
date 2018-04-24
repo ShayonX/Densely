@@ -11,7 +11,7 @@ import json
 
 
 raw_count = []
-with open('raw_count.json') as file:
+with open('Labels/raw_count.json') as file:
     raw_count = json.load(file)
 
 
@@ -58,7 +58,7 @@ classes={
 for i in image_count.keys():
     image_class[i]=""
     for j in classes.keys():
-        if classes[j][0]<image_count[i]<classes[j][1]:
+        if classes[j][0]<=image_count[i]<=classes[j][1]:
             image_class[i]=j
             break
 

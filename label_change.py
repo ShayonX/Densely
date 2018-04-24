@@ -10,7 +10,6 @@ shift={
     "medium":2,
     "high":3,
     "very_high":4,
-    "":4
 }
 changed_labels={}
 for i in labels.keys():
