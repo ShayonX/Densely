@@ -1,3 +1,4 @@
 import sys
 print(sys.argv[1])
-exit(0);
+#print("hi")
+sys.stdout.flush()
