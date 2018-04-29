@@ -1,0 +1,252 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Densely
+    link(href='css/bootstrap.min.css', rel='stylesheet')
+    link(href='css/scrolling-nav.css', rel='stylesheet')
+    link(href='css/timeline.css', rel='stylesheet')
+  body#page-top
+    nav#mainNav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+      .container
+        a.navbar-brand.js-scroll-trigger(href='#page-top') Densely
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item
+              a.nav-link.js-scroll-trigger(href='#model') Check the Model!
+            li.nav-item
+              a.nav-link.js-scroll-trigger(href='#wiki') How we worked on the Project
+            li.nav-item
+              a.nav-link.js-scroll-trigger(href='#team') About our Team
+    header.bg-primary.text-white
+      .container.text-center
+        h1 Densely
+        p.lead A Software Engineering Project to with a Neural Networks Twist 
+    section#model
+      .container.text-center
+        .h2 Live Model Demo
+      br
+      br
+      .container
+        .row.text-center
+          .col-lg-4.mx.auto
+          .col-lg-4.mx-auto
+            button.btn.btn-primary.btn-lg(type='button', onclick="ajaxDensity()") Check the Density!
+          .col-lg-4.mx.auto
+      .container
+        .ui#resultlist
+            
+    section#wiki.bg-light
+      .container
+        .row
+          .col-lg-8.mx-auto
+            h2 The plan
+            p.lead
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.
+            h2 The time line
+            .container
+              ul.timeline
+                li
+                  .timeline-badge.info
+                    i.glyphicon.glyphicon-chevron-left
+                  .timeline-panel
+                    .timeline-heading
+                      h4.timeline-title  Begin BASIC life support
+                    .timeline-body
+                      ul
+                        li Airway - Assess for airway obstruction, assess for breathing, perform intubation
+                        li Breathing - Ventilate with 100% oxygen, provide 10-24 breaths/minute
+                        li
+                          | Circulation - Assess for heart beat and pulses if absent, begin chest compressions Provide 100-120 compressions /minute
+                li.timeline-inverted
+                  .timeline-badge.warning
+                    i.glyphicon.glyphicon-chevron-right
+                  .timeline-panel
+                    .timeline-heading
+                      h4.timeline-title Begin ADVANCED life support
+                    .timeline-body
+                      p
+                        | Obtain Electrocardiogram and Determine Arrest Rhythm Obtain Access for Drug Therapy
+                li
+                  .timeline-badge.danger
+                    i.glyphicon.glyphicon-chevron-left
+                  .timeline-panel
+                    .timeline-heading
+                      h4.timeline-title Ventricular Fibrillation/Ventricular Tachycardia
+                    .timeline-body
+                      table.table.table-condensed.footable.bordered
+                        thead
+                          tr.printThis
+                            th Drug
+                            th(data-hide='phone,tablet') Concentration
+                            th(data-hide='phone,tablet') Dosage
+                            th.success Dose
+                        tbody
+                          tr
+                            td Atropine
+                            td 0.54 mg/ml
+                            td 0.02 mg/kg
+                            td
+                              span.label.label-success.number(title='', data-original-title='')
+                          tr
+                            td Atropine
+                            td 0.54 mg/ml
+                            td 0.02 mg/kg
+                            td
+                              span.label.label-success.number(title='', data-original-title='')
+                          tr
+                            td Atropine
+                            td 0.54 mg/ml
+                            td 0.02 mg/kg
+                            td
+                              span.label.label-success.number(title='', data-original-title='')
+                      hr
+                      table.table.table-condensed.footable.bordered
+                        thead
+                          tr.printThis
+                            th Drug
+                            th(data-hide='phone,tablet') Concentration
+                            th(data-hide='phone,tablet') Dosage
+                            th.success Dose
+                        tbody
+                          tr
+                            td Atropine
+                            td 0.54 mg/ml
+                            td 0.02 mg/kg
+                            td
+                              span.label.label-success.number(title='', data-original-title='')
+                          tr
+                            td Atropine
+                            td 0.54 mg/ml
+                            td 0.02 mg/kg
+                            td
+                              span.label.label-success.number(title='', data-original-title='')
+                          tr
+                            td Atropine
+                            td 0.54 mg/ml
+                            td 0.02 mg/kg
+                            td
+                              span.label.label-success.number(title='', data-original-title='')
+                      hr
+                      p Repeat Debrillation 2X initial Dose
+                li.timeline-inverted
+                  .timeline-badge.default
+                    i.glyphicon.glyphicon-chevron-right
+                  .timeline-panel
+                    .timeline-heading
+                      h4.timeline-title Asystole/Bradycardia/Pulseless Electrical Activity
+                    .timeline-body
+                      table.table.table-condensed.footable.bordered
+                        thead
+                          tr.printThis
+                            th Drug
+                            th(data-hide='phone,tablet') Concentration
+                            th(data-hide='phone,tablet') Dosage
+                            th.success Dose
+                        tbody
+                          tr
+                            td Atropine
+                            td 0.54 mg/ml
+                            td 0.02 mg/kg
+                            td
+                              span.label.label-success.number(title='', data-original-title='')
+                          tr
+                            td Atropine
+                            td 0.54 mg/ml
+                            td 0.02 mg/kg
+                            td
+                              span.label.label-success.number(title='', data-original-title='')
+                          tr
+                            td Atropine
+                            td 0.54 mg/ml
+                            td 0.02 mg/kg
+                            td
+                              span.label.label-success.number(title='', data-original-title='')
+                      hr
+                      p
+                        | If available, consider transthoracic pacing?
+                        | Must be instituted early
+                li
+                  .timeline-badge.default
+                    i.glyphicon.glyphicon-chevron-left
+                  .timeline-panel
+                    .timeline-heading
+                      h4.timeline-title Anesthesia-related arrest
+                    .timeline-body
+                      p
+                        | Turn off vaporizer, Flush circuit, Administer drug reversal agents, 0.01 mg/kg epinephrine (0.11  mls IV) q 1-2 minutes as needed
+                li
+                  .timeline-badge.default
+                    i.glyphicon.glyphicon-chevron-left
+                  .timeline-panel
+                    .timeline-heading
+                      h4.timeline-title During CPRC:
+                    .timeline-body
+                      p
+                        | Consider interposed abdominal compressions
+                        | Consider open chest CPR
+                        | Consider Sodium Bicarbonate 1-2 mEq/kg IV(      11.0  to  22.0  mls. IV) (for prolonged arrest > 10 minutes)
+                        | Consider 10% Calcium Chloride 0.1 ml/kg IV(     1.1 mls. IV) (slowly in patients with hyperkalemia or ionized hypocalcemia)
+                        | Consider Magnesium Chloride   30 mg/kg IV(      1.7 mls IV ) for refractory ventricular arrhythmias
+                        | Consider 50% Dextrose               1 ml/kg IV(     11.0  mls IV ) in hypoglycemic patients
+                li.timeline-inverted
+                  .timeline-badge.success
+                    i.glyphicon.glyphicon-chevron-right
+                  .timeline-panel
+                    .timeline-heading
+                      h4.timeline-title Intratracheal Doses
+                    .timeline-body
+                      table.table.table-condensed.footable.bordered
+                        thead
+                          tr.printThis
+                            th Drug
+                            th(data-hide='phone,tablet') Concentration
+                            th(data-hide='phone,tablet') Dosage
+                            th.success Dose
+                        tbody
+                          tr
+                            td Atropine
+                            td 0.54 mg/ml
+                            td 0.02 mg/kg
+                            td
+                              span.label.label-success.number(title='', data-original-title='')
+                          tr
+                            td Atropine
+                            td 0.54 mg/ml
+                            td 0.02 mg/kg
+                            td
+                              span.label.label-success.number(title='', data-original-title='')
+                          tr
+                            td Atropine
+                            td 0.54 mg/ml
+                            td 0.02 mg/kg
+                            td
+                              span.label.label-success.number(title='', data-original-title='')
+
+            h2 The issues
+            p.lead
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.
+    section#team
+      .container
+        .row
+          .col-lg-8.mx-auto
+            p.lead
+              Divide into two and abou Shayon and Prashil
+    // Footer
+    footer.py-5.bg-dark
+      .container
+        p.m-0.text-center.text-white Copyright © Your Website 2017
+      // /.container
+    // Bootstrap core JavaScript
+    script(src='vendor/jquery/jquery.min.js')
+    script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')
+    // Plugin JavaScript
+    script(src='vendor/jquery-easing/jquery.easing.min.js')
+    // Custom JavaScript for this theme
+    script(src='js/scrolling-nav.js')
+    script(src="js/getdensity.js")
