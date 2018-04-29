@@ -3,6 +3,7 @@ import cv2
 import colorsys
 import collections
 import sys
+import time
 
 # Building Blocks
 
@@ -246,7 +247,7 @@ detectedContours = []
 # print(total_frames)
 
 
-frame_no = int(sys.argv[1])
+frame_no = int(time.time())%400
 count = 0
 
 # cap.set(cv2.CAP_PROP_POS_FRAMES, frame_no)
@@ -387,7 +388,8 @@ while (count < frame_no):
     if(count == frame_no):
         # print('Answer')
         print(str(len(detectedPeople)))
-        getAnswer(str(len(detectedPeople)))
+        #getAnswer(str(len(detectedPeople)))
+        sys.stdout.flush()
 
     # RE-set
     detectedContours = []
