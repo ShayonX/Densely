@@ -245,6 +245,7 @@ detectedContours = []
 # total_frames = cap.get(7)
 # print(total_frames)
 
+
 frame_no = int(sys.argv[1])
 count = 0
 

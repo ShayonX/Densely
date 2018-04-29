@@ -21,9 +21,14 @@ app.get('/getDensity', function(req, res){
 	var difference= currTime - serverStartTime;
 	var framesTillNow =Math.floor(difference/41.666666666666)
 	var currentLoopFrame= framesTillNow%400
-	let process = exec('python',["Classifiers/crowd_density_custom_classifier.py",currentLoopFrame.toString()]);
+
+	var x=currentLoopFrame.toString();
+	var myarray= 'python ./Classifiers/crowd_density_custom_classifier.py '+x.toString();
+	console.log(myarray);
+	let process = exec(myarray);
   	process.stdout.on('data', function (data) {
   	var message=data.toString('utf8');
+  	console.log(message);
     res.send(message);
  	});
 });
