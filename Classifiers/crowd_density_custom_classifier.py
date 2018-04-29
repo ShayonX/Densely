@@ -246,8 +246,9 @@ detectedContours = []
 # total_frames = cap.get(7)
 # print(total_frames)
 
+frame_no = int(time.time()%400)
 
-frame_no = int(time.time())%400
+
 count = 0
 
 # cap.set(cv2.CAP_PROP_POS_FRAMES, frame_no)
