@@ -5,7 +5,8 @@ Our project aims in developing a system which could detect the crowd density for
 
 ### Dataset to train the neural network
 
-The data set used to train the neural network is the PETS 2009 Benchmark Data. Consists video footage of a location form different angels. The data set can be found [here](http://www.cvg.reading.ac.uk/PETS2009/a.html). We get the count for the dataset from [People Counting Data for PETS2009 Dataset](http://visal.cs.cityu.edu.hk/downloads/). 
+We are using the following video:
+[Click Here](https://drive.google.com/open?id=1h8Mp9NZi2Pqond_CTJtN5_YAV75K23it)
 
 
 ### Team Members:
