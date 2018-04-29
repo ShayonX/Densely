@@ -439,6 +439,7 @@ if __name__== "__main__":
     cv2.namedWindow('config')
     cv2.createTrackbar(switch, 'config', 0, 1, nothing)
     frame_no = int(sys.argv[1])
+	
     peopleCount = main(frame_no)
 
     print(peopleCount)
