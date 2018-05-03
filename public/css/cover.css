@@ -35,6 +35,10 @@ body {
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
 
+.table thead tr th {
+   text-align: center;   
+}
+
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
