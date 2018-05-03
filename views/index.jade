@@ -39,8 +39,14 @@ html(lang='en')
             button.btn.btn-primary.btn-lg(type='button', onclick="ajaxDensity()") Check the Density!
           .col-lg-4.mx.auto
       .container
-        .table#resultlist
-            
+        br
+        table.table.text-centered(margin='auto')
+          thead
+            tr
+              th(margin="30px",padding="40% 40% 40% 40%") Image
+              th People
+          tbody#resultlist
+        
     section#wiki.bg-light
       .container
         .row
@@ -49,6 +55,7 @@ html(lang='en')
             p.lead
               | Working on a project has it's perks. We do not have to do it for arbitary reason. There is a purpose. There is a will to do stuff. There is a passion. But sometimes this passion will lead us down the rabbit hole where we get stuck in solving some issues and miss the deadline. So it is very important that a time line is managed. We tried to document as much as we could of our journey on this project!
             h2 The Timeline
+            br
             .container
               ul.timeline
                 li
@@ -68,176 +75,49 @@ html(lang='en')
                       h4.timeline-title Search for Database
                     .timeline-body
                       p
-                        The initial weeks was majorly focused on one and only one thing. Getting a good dataset would mean that half the battle was won on the neural networks front. But it was not easy. Every database we looked
+                        The initial weeks was majorly focused on one and only one thing. Getting a good dataset would mean that half the battle was won on the neural networks front. But it was not easy. Every database we looked at either had bad labels or did not have enough data to train for the model. We knew the task was going to get difficult now but luckily we found some opencv framework to get the model.
                 li
                   .timeline-badge.danger
                     i.glyphicon.glyphicon-chevron-left
                   .timeline-panel
                     .timeline-heading
-                      h4.timeline-title Ventricular Fibrillation/Ventricular Tachycardia
+                      h4.timeline-title Smooth Sail!
                     .timeline-body
-                      table.table.table-condensed.footable.bordered
-                        thead
-                          tr.printThis
-                            th Drug
-                            th(data-hide='phone,tablet') Concentration
-                            th(data-hide='phone,tablet') Dosage
-                            th.success Dose
-                        tbody
-                          tr
-                            td Atropine
-                            td 0.54 mg/ml
-                            td 0.02 mg/kg
-                            td
-                              span.label.label-success.number(title='', data-original-title='')
-                          tr
-                            td Atropine
-                            td 0.54 mg/ml
-                            td 0.02 mg/kg
-                            td
-                              span.label.label-success.number(title='', data-original-title='')
-                          tr
-                            td Atropine
-                            td 0.54 mg/ml
-                            td 0.02 mg/kg
-                            td
-                              span.label.label-success.number(title='', data-original-title='')
-                      hr
-                      table.table.table-condensed.footable.bordered
-                        thead
-                          tr.printThis
-                            th Drug
-                            th(data-hide='phone,tablet') Concentration
-                            th(data-hide='phone,tablet') Dosage
-                            th.success Dose
-                        tbody
-                          tr
-                            td Atropine
-                            td 0.54 mg/ml
-                            td 0.02 mg/kg
-                            td
-                              span.label.label-success.number(title='', data-original-title='')
-                          tr
-                            td Atropine
-                            td 0.54 mg/ml
-                            td 0.02 mg/kg
-                            td
-                              span.label.label-success.number(title='', data-original-title='')
-                          tr
-                            td Atropine
-                            td 0.54 mg/ml
-                            td 0.02 mg/kg
-                            td
-                              span.label.label-success.number(title='', data-original-title='')
-                      hr
-                      p Repeat Debrillation 2X initial Dose
+                      p Once we found the opencv module it was a smooth sail. The model was coming out well and so was the UI and middle ware. But it was just the calm before the storm.
                 li.timeline-inverted
                   .timeline-badge.default
                     i.glyphicon.glyphicon-chevron-right
                   .timeline-panel
                     .timeline-heading
-                      h4.timeline-title Asystole/Bradycardia/Pulseless Electrical Activity
+                      h4.timeline-title The integration and deployment storm
                     .timeline-body
-                      table.table.table-condensed.footable.bordered
-                        thead
-                          tr.printThis
-                            th Drug
-                            th(data-hide='phone,tablet') Concentration
-                            th(data-hide='phone,tablet') Dosage
-                            th.success Dose
-                        tbody
-                          tr
-                            td Atropine
-                            td 0.54 mg/ml
-                            td 0.02 mg/kg
-                            td
-                              span.label.label-success.number(title='', data-original-title='')
-                          tr
-                            td Atropine
-                            td 0.54 mg/ml
-                            td 0.02 mg/kg
-                            td
-                              span.label.label-success.number(title='', data-original-title='')
-                          tr
-                            td Atropine
-                            td 0.54 mg/ml
-                            td 0.02 mg/kg
-                            td
-                              span.label.label-success.number(title='', data-original-title='')
-                      hr
-                      p
-                        | If available, consider transthoracic pacing?
-                        | Must be instituted early
+                      p All was well till both the model and UI was ready and it was time for integration and deployment. From python crashes to too many multiple processes the entire project was falling apart. While the proof of concept for what we thought was there but we were still not available to get the 2 parts join and work seamlessly. That's when we knew we had to think of better architecture to solve the problem. 
                 li
                   .timeline-badge.default
                     i.glyphicon.glyphicon-chevron-left
                   .timeline-panel
                     .timeline-heading
-                      h4.timeline-title Anesthesia-related arrest
+                      h4.timeline-title Dawn of new ideas
                     .timeline-body
-                      p
-                        | Turn off vaporizer, Flush circuit, Administer drug reversal agents, 0.01 mg/kg epinephrine (0.11  mls IV) q 1-2 minutes as needed
-                li
-                  .timeline-badge.default
-                    i.glyphicon.glyphicon-chevron-left
-                  .timeline-panel
-                    .timeline-heading
-                      h4.timeline-title During CPRC:
-                    .timeline-body
-                      p
-                        | Consider interposed abdominal compressions
-                        | Consider open chest CPR
-                        | Consider Sodium Bicarbonate 1-2 mEq/kg IV(      11.0  to  22.0  mls. IV) (for prolonged arrest > 10 minutes)
-                        | Consider 10% Calcium Chloride 0.1 ml/kg IV(     1.1 mls. IV) (slowly in patients with hyperkalemia or ionized hypocalcemia)
-                        | Consider Magnesium Chloride   30 mg/kg IV(      1.7 mls IV ) for refractory ventricular arrhythmias
-                        | Consider 50% Dextrose               1 ml/kg IV(     11.0  mls IV ) in hypoglycemic patients
+                      p As the semester was coming to an end our brains were also working on full throttle. We explored all possible options ranging from python servers to kafka queues and RabbitMQ. We looked for live stream broadcaster and running the saved model in java script. In the end we decided to go with a database which will be continuously updated by the python server and node will pull out values for that when ever user requests. 
                 li.timeline-inverted
-                  .timeline-badge.success
+                  .timeline-badge.default
                     i.glyphicon.glyphicon-chevron-right
                   .timeline-panel
                     .timeline-heading
-                      h4.timeline-title Intratracheal Doses
+                      h4.timeline-title Final leg
                     .timeline-body
-                      table.table.table-condensed.footable.bordered
-                        thead
-                          tr.printThis
-                            th Drug
-                            th(data-hide='phone,tablet') Concentration
-                            th(data-hide='phone,tablet') Dosage
-                            th.success Dose
-                        tbody
-                          tr
-                            td Atropine
-                            td 0.54 mg/ml
-                            td 0.02 mg/kg
-                            td
-                              span.label.label-success.number(title='', data-original-title='')
-                          tr
-                            td Atropine
-                            td 0.54 mg/ml
-                            td 0.02 mg/kg
-                            td
-                              span.label.label-success.number(title='', data-original-title='')
-                          tr
-                            td Atropine
-                            td 0.54 mg/ml
-                            td 0.02 mg/kg
-                            td
-                              span.label.label-success.number(title='', data-original-title='')
+                      p After the complete integration and deployment, it was time to document and test everything. It was surprising how even a 2 member team had schedule conflicts and how we forgot parts of our code when we went back to test it. Our comments at critical sections helped us in the end. And here we are presenting it to our Professor while he smiles reading this line!
 
-            h2 The issues
-            p.lead
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.
     section#team
       .container
         .row
           .col-lg-8.mx-auto
-            p.lead
-              Divide into two and abou Shayon and Prashil
+            p.lead Our team consisted of 2 people : Prashil Bhimani and Shayon Gupta. Shayon is a neural network enthusiast who loves discussing geeky topics and is obsessed by awesome course work and awesome Professors!
     // Footer
     footer.py-5.bg-dark
       .container
-        p.m-0.text-center.text-white Copyright © Your Website 2017
+        p.m-0.text-center.text-white 
       // /.container
     // Bootstrap core JavaScript
     script(src='vendor/jquery/jquery.min.js')
