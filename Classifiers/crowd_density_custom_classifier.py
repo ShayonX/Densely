@@ -4,11 +4,9 @@ import colorsys
 import collections
 import sys
 import time
+import cassandra
+from cassandra.cluster import Cluster
 
-
-
-with open("temp1.txt","w") as a:
-            a.write("xsx")
 # Building Blocks
 
 class Position(object):
@@ -222,7 +220,7 @@ inCriterion = "<"
 boundaryPt1 = [0, midHeight - 100]
 boundaryPt2 = [maxWidth, midHeight]
 
-# The Actual Tracking happens as under
+# This is where we track
 
 # Passage Control
 allowPassage = True
@@ -250,9 +248,7 @@ detectedContours = []
 # total_frames = cap.get(7)
 # print(total_frames)
 
-frame_no = int(time.time()%400)
-
-
+frame_no = int(400)
 count = 0
 
 # cap.set(cv2.CAP_PROP_POS_FRAMES, frame_no)
@@ -260,7 +256,8 @@ count = 0
 _, pFrame = cap.read()
 
 # Tracking the number of frames
-
+cluster = Cluster(['127.0.0.1'])
+session = cluster.connect('densely')
 count = 0
 
 while (count < frame_no):
@@ -389,16 +386,7 @@ while (count < frame_no):
             detectedPeople.append(People(dC.x, dC.y, dC.w, dC.h, frame[dC.y:dC.y + dC.h, dC.x:dC.x + dC.w], startHue))
 
     # print(str(len(detectedPeople)))
-
-    if(count == frame_no):
-        # print('Answer')
-        with open("temp.txt","w") as a:
-            a.write(str(len(detectedPeople)))
-            a.write("k")
-        print(str(len(detectedPeople)))
-        #getAnswer(str(len(detectedPeople)))
-        sys.stdout.flush()
-        exit(0)
+    session.execute("insert into densely.data (timestamp , frame_no , people) values ("+str(int(time.time()))+", "+str(count)+", "+str(len(detectedPeople))+");")
 
     # RE-set
     detectedContours = []
@@ -407,63 +395,7 @@ while (count < frame_no):
     pOpening = opening
     frameCounter += 1
 
-    # Output
-    # try:
-    #     # Setup Stats
-    #     textNoOfPeople = "People: " + str(len(detectedPeople))
-    #     textNoIn = "In: " + str(peopleIn)
-    #     textNoOut = "Out: " + str(peopleOut)
-    #     textNoViolationIn = "In: " + str(peopleViolationIn)
-    #     textNoViolationOut = "Out: " + str(peopleViolationOut)
-    #
-    #     if allowPassage:
-    #         cv2.line(frameForView, (int(boundaryPt1[0]), int(boundaryPt1[1])),
-    #                  (int(boundaryPt2[0]), int(boundaryPt2[1])), (0, 255, 0), 2)
-    #     else:
-    #         cv2.line(frameForView, (int(boundaryPt1[0]), int(boundaryPt1[1])),
-    #                  (int(boundaryPt2[0]), int(boundaryPt2[1])), (0, 0, 255), 2)
-    #
-    #     # Draw Infos
-    #     cv2.putText(frameInfo, textNoOfPeople, (30, 40), cv2.FONT_HERSHEY_SIMPLEX
-    #                 , 1, (255, 255, 255), 1, cv2.LINE_AA)
-    #     cv2.putText(frameInfo, textNoIn, (30, 80), cv2.FONT_HERSHEY_SIMPLEX
-    #                 , 1, (255, 255, 255), 1, cv2.LINE_AA)
-    #     cv2.putText(frameInfo, textNoOut, (30, 120), cv2.FONT_HERSHEY_SIMPLEX
-    #                 , 1, (255, 255, 255), 1, cv2.LINE_AA)
-    #     cv2.line(frameInfo, (0, 160), (640, 160), (255, 255, 255), 1)
-    #     cv2.putText(frameInfo, "VIOLATION", (30, 200), cv2.FONT_HERSHEY_SIMPLEX
-    #                 , 1, (255, 255, 255), 1, cv2.LINE_AA)
-    #     cv2.putText(frameInfo, textNoViolationIn, (30, 240), cv2.FONT_HERSHEY_SIMPLEX
-    #                 , 1, (255, 255, 255), 1, cv2.LINE_AA)
-    #     cv2.putText(frameInfo, textNoViolationOut, (30, 280), cv2.FONT_HERSHEY_SIMPLEX
-    #                 , 1, (255, 255, 255), 1, cv2.LINE_AA)
-    #
-    #     # Display
-    #     cv2.imshow('FrameForView', frameForView)
-    #     cv2.imwrite("ExtractedFrames/frame%d.jpg" % count, frameForView)
-    #     count+=1
-    #     # cv2.imshow('Frame', frame)
-    #     if passImage != None:
-    #         cv2.imshow('Violators', passImage)
-    #     cv2.imshow('config', frameInfo)
-
-    # except:
-    #     print('EOF')
-    #     break
-
-    # Abort and exit with 'Q' or ESC
-    k = cv2.waitKey(30) & 0xff
-    if k == 27:
-        break
 
 
-
-
-#
-# print(peopleCount) # peopleCount is what we need
-
-
-# cap.release()
-# cv2.destroyAllWindows()
-
-
+cap.release()
+cv2.destroyAllWindows()
