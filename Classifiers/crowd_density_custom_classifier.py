@@ -5,6 +5,10 @@ import collections
 import sys
 import time
 
+
+
+with open("temp1.txt","w") as a:
+            a.write("xsx")
 # Building Blocks
 
 class Position(object):
@@ -388,9 +392,13 @@ while (count < frame_no):
 
     if(count == frame_no):
         # print('Answer')
+        with open("temp.txt","w") as a:
+            a.write(str(len(detectedPeople)))
+            a.write("k")
         print(str(len(detectedPeople)))
         #getAnswer(str(len(detectedPeople)))
         sys.stdout.flush()
+        exit(0)
 
     # RE-set
     detectedContours = []

@@ -1,8 +1,15 @@
 function ajaxDensity() {
   $.get( '/getDensity', function(data) {
-  	var node = document.createElement("LI");                 // Create a <li> node
-	var textnode = document.createTextNode(data);         // Create a text node
-	node.appendChild(textnode);                              // Append the text to <li>
-	document.getElementById("resultlist").appendChild(node);
+  	var div= "<tr>";
+  	data=JSON.parse(data);
+  	var frame=data["frameno"];
+  	var img= "<td><img src='http://localhost:8000/data/frame"+frame+".jpg' height='200' width='200'></td>";
+  	div=div+img;
+	div=div+"<td>"+data["people"]+"</td>";
+	div=div+"</tr>";
+	div=$(div);
+	div.hide();
+	$('#resultlist:first').after(div);  
+	div.fadeIn("slow");
    });
 }
