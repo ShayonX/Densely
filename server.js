@@ -44,14 +44,6 @@ app.get('/getDensity', function(req, res){
 
 });
 
-function loadImage(frameno){
-    $.ajax({
-
-        success: function(){
-            ajaxCall3();
-        }
-    });
-}
 
 app.listen(process.env.PORT||8000);
 
